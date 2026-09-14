@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { TrainFront } from "lucide-react";
+import logoAsset from "@/assets/railsense-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Live Dashboard" },
