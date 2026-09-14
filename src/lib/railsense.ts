@@ -136,15 +136,15 @@ const SEED: { nextIndex: number; delay: number; eta: number; w: number; c: numbe
 
 function initialState(): TrainState[] {
   return TRAINS.map((def, i) => {
-    const s = SEED[i];
+    const s = SEED[i]!;
     return {
       def,
       nextIndex: s.nextIndex,
       delay: s.delay,
       etaMinutes: s.eta,
       progress: 0.45,
-      weather: WEATHER[s.w],
-      congestion: CONGESTION[s.c],
+      weather: WEATHER[s.w]!,
+      congestion: CONGESTION[s.c]!,
       history: [-4, -3, -2, -1, 0].map((k, idx) => ({
         label: `T${idx + 1}`,
         delay: Math.max(-5, s.delay + k * 2),
@@ -166,14 +166,14 @@ function tick(states: TrainState[]): TrainState[] {
     let progress = clamp(t.progress + 0.06, 0, 1);
     if (etaMinutes <= 0) {
       nextIndex = Math.min(t.def.stations.length - 1, t.nextIndex + 1);
-      const prev = t.def.stations[nextIndex - 1];
-      const next = t.def.stations[nextIndex];
+      const prev = t.def.stations[nextIndex - 1]!;
+      const next = t.def.stations[nextIndex]!;
       etaMinutes = Math.max(6, Math.round((next.schedOffset - prev.schedOffset) * 0.4));
       progress = 0.05;
     }
     const history = [...t.history.slice(1), { label: "now", delay }].map((h, i, arr) => ({
       label: i === arr.length - 1 ? "now" : `T${i + 1}`,
-      delay: h.delay,
+      delay: h!.delay,
     }));
     return {
       ...t,
@@ -182,9 +182,9 @@ function tick(states: TrainState[]): TrainState[] {
       nextIndex,
       progress,
       history,
-      weather: Math.random() < 0.12 ? WEATHER[Math.floor(Math.random() * WEATHER.length)] : t.weather,
+      weather: Math.random() < 0.12 ? WEATHER[Math.floor(Math.random() * WEATHER.length)]! : t.weather,
       congestion:
-        Math.random() < 0.12 ? CONGESTION[Math.floor(Math.random() * CONGESTION.length)] : t.congestion,
+        Math.random() < 0.12 ? CONGESTION[Math.floor(Math.random() * CONGESTION.length)]! : t.congestion,
     };
   });
 }
@@ -249,7 +249,7 @@ export function formatDelay(delay: number) {
 
 /** Turn a minute-offset into a clock time string, based on route start label */
 export function clockFrom(startLabel: string, offsetMin: number) {
-  const [h, m] = startLabel.split(":").map(Number);
+  const [h = 0, m = 0] = startLabel.split(":").map(Number);
   const total = (h * 60 + m + offsetMin) % (24 * 60);
   const hh = String(Math.floor(total / 60)).padStart(2, "0");
   const mm = String(total % 60).padStart(2, "0");
