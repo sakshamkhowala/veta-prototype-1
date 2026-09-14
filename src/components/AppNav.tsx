@@ -12,9 +12,11 @@ export function AppNav() {
     <header className="sticky top-0 z-30 border-b border-border/70 bg-surface/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3">
         <Link to="/" className="flex items-center gap-2">
-          <span className="flex size-9 items-center justify-center rounded-md bg-navy text-primary-foreground">
-            <TrainFront className="size-5" />
-          </span>
+          <img
+            src={logoAsset.url}
+            alt="RailSense logo"
+            className="size-10 shrink-0 object-contain"
+          />
           <span className="leading-tight">
             <span className="block text-lg font-semibold tracking-tight text-navy">RailSense</span>
             <span className="block text-[11px] text-muted-foreground">Predict. Plan. Arrive Better.</span>
