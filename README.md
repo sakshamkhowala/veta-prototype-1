@@ -1,10 +1,10 @@
-# Veta RailSense Live Arrival
+# Veta Live Arrival
 
-Build a web app called "RailSense" — a real-time train arrival prediction dashboard for Indian Railways, built for a Smart India Hackathon prototype demo.
+"Veta" — a real-time train arrival prediction dashboard for Indian Railways, built for a Smart India Hackathon prototype demo.
 
 CONCEPT
 
-Instead of a fixed train schedule, RailSense shows a live, constantly-updating predicted arrival time (ETA) for each train, based on simulated live conditions (current position, delay so far, weather, and track congestion). The ETA should visibly update every few seconds to demonstrate the "live" concept.
+Instead of a fixed train schedule, Veta shows a live, constantly-updating predicted arrival time (ETA) for each train, based on simulated live conditions (current position, delay so far, weather, and track congestion). The ETA should visibly update every few seconds to demonstrate the "live" concept.
 
 PAGES / SCREENS
 
@@ -56,15 +56,10 @@ DESIGN
 
 NAME / BRANDING
 
-- App name: RailSense
+- App name: Veta
 
 - Tagline: "Predict. Plan. Arrive Better."
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/efe39f71-ba2d-4b3b-b48e-7da7cae5d065).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
 - **Stay in sync**: every change made in Lovable is committed straight to this repository.

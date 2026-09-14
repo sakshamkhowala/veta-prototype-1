@@ -72,12 +72,12 @@
 
 :root {
   --radius: 0.625rem;
-  --navy: oklch(0.308 0.087 263.6);
-  --brand: oklch(0.505 0.163 258.3);
-  --surface: oklch(1 0 0);
-  --ontime: oklch(0.556 0.135 155.5);
-  --warn: oklch(0.665 0.163 63.4);
-  --late: oklch(0.556 0.208 26.3);
+  --navy: #1F3864;
+  --brand: #1565C0;
+  --surface: #ffffff;
+  --ontime: #16a34a;
+  --warn: #ea580c;
+  --late: #dc2626;
   --background: oklch(0.988 0.003 260);
   --foreground: oklch(0.209 0.03 264.7);
   --card: oklch(1 0 0);

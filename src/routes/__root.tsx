@@ -77,15 +77,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "RailSense — Predict. Plan. Arrive Better." },
+      { title: "Veta — Predict. Plan. Arrive Better. | Indian Railways Live ETA" },
       {
         name: "description",
-        content: "Live predicted train arrival times for Indian Railways, updating every few seconds.",
+        content: "Veta is a real-time train arrival prediction dashboard for Indian Railways, dynamically updating arrival predictions based on live conditions.",
       },
-      { property: "og:title", content: "RailSense — Predict. Plan. Arrive Better." },
+      { property: "og:title", content: "Veta — Predict. Plan. Arrive Better." },
       {
         property: "og:description",
-        content: "Live predicted train arrival times for Indian Railways, updating every few seconds.",
+        content: "Live predicted train arrival times for Indian Railways, updating every few seconds from simulated conditions.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
